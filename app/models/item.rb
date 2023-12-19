@@ -5,9 +5,9 @@ class Item < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :price, presence: true
-  validates :genre, presence: true, inclusion: { in: %w(Men Women Non-Binary) }
-  validates :size, inclusion: { in: %w(S M L XL) }
+  validates :genre, presence: true, inclusion: { in: %w(men women) }
+  validates :size, inclusion: { in: %w(s m l xl) }
   validates :color, presence: true
-  validates :type, presence: true, inclusion: { in: %w(Upper Lower Shoes Two-pieces) }
+  validates :kind, presence: true, inclusion: { in: %w(top bottom shoes) }
   validates :photo, presence: true
 end
