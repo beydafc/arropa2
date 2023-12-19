@@ -29,6 +29,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
+    redirect_to items_path
   end
 
   private
@@ -38,6 +39,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:price, :size, :genre, :color, :status, :type)
+    params.require(:item).permit(:price, :size, :genre, :color, :status, :type, :name, :photo)
   end
 end
