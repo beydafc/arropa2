@@ -2,16 +2,9 @@ class ItemsController < ApplicationController
   before_action :find_item, only: %i[show edit update destroy]
   def index
     @items = Item.all
-  end
-
-  def top
-    @items = Item.where(kind: "top")
-  end
-  def bottom
-    @items = Item.where(kind: "bottom")
-  end
-  def shoes
-    @items = Item.where(kind: "shoes")
+    if params[:query].present?
+      @items = Item.search_by_attribute(params[:query])
+    end
   end
 
   def show

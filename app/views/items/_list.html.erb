@@ -1,8 +1,0 @@
-  <% @items.each do |item| %>
-    <div>
-      <%= cl_image_tag item.photo.key, height: 50, width: 50, crop: :fill %>
-      <p><%= item.name %></p>
-      <p>$<%= item.price.floor(2) %></p>
-      <p><%= link_to "See details", item_path(item.id)%></p>
-    </div>
-  <% end %>
