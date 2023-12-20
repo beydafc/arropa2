@@ -5,7 +5,7 @@
   <div class="container" >
     <h1>ARROPA2 <strong>buy &</strong> sell <strong> your CLOTHES</strong>!</h1>
     <p>Give your garments a second chance around!</p>
-    <a class="btn btn-primary" href="#">View products</a>
+    <%= link_to "View products", items_path %>
   </div>
 </div>
 
@@ -22,7 +22,7 @@
         <div class="card-body">
           <h5 class="card-title">Tops</h5>
           <p class="card-text">Garments as t-shirts, shirts, tops and blouses.</p>
-            <%= link_to "View", top_items_path, class: "btn btn-primary" %>
+            <%= link_to "View", items_path(query: "top"), class: "btn btn-primary" %>
         </div>
         <div class="card-footer">
       </div>
@@ -34,7 +34,7 @@
         <div class="card-body">
           <h5 class="card-title">Bottoms</h5>
           <p class="card-text">Trousers, pants, shorts, skirts, you name it!</p>
-            <%= link_to "View", bottom_items_path, class: "btn btn-primary"  %>
+            <%= link_to "View", items_path(query: "bottom"), class: "btn btn-primary"  %>
         </div>
         <div class="card-footer">
       </div>
@@ -46,7 +46,7 @@
         <div class="card-body">
           <h5 class="card-title">Shoes</h5>
           <p class="card-text">Get your sneakers, boots, high-heels or combatboots here!</p>
-            <%= link_to "View", shoes_items_path, class: "btn btn-primary"%>
+            <%= link_to "View", items_path(query: "shoes"), class: "btn btn-primary"%>
         </div>
         <div class="card-footer">
       </div>

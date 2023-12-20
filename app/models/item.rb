@@ -10,4 +10,11 @@ class Item < ApplicationRecord
   validates :color, presence: true
   validates :kind, presence: true, inclusion: { in: %w(top bottom shoes) }
   validates :photo, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_attribute,
+  against: [ :kind, :size, :genre],
+  using: {
+    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
 end
