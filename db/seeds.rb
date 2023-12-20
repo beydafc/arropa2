@@ -11,6 +11,7 @@ require "open-uri"
 Item.delete_all
 User.delete_all
 
+
 GENRE = %w(men women)
 SIZE = %w(s m l xl)
 KIND = %w(top bottom shoes)
