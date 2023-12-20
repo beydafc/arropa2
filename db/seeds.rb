@@ -8,13 +8,14 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require "open-uri"
-User.delete_all
 Item.delete_all
+User.delete_all
+
 
 GENRE = %w(men women)
 SIZE = %w(s m l xl)
 KIND = %w(top bottom shoes)
-usuario = User.create(email: "beyda@hotmail.com", password: "1234567")
+usuario = User.create(email: "beyda@hotmail.com", password: "1234567", first_name: "Beyda", last_name: "Fentanes", phone_number: "442 506 6096", address: "Milenio III, Queretaro, Mexico")
 
 10.times do
   item = Item.new(
