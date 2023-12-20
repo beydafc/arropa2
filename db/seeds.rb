@@ -8,8 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require "open-uri"
-User.delete_all
 Item.delete_all
+User.delete_all
+
 
 GENRE = %w(men women)
 SIZE = %w(s m l xl)
