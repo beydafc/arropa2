@@ -12,7 +12,7 @@ class MovementsController < ApplicationController
   end
 
   def create
-    @movement = Movement.create(purchase_date: Date.today, user_id: current_user.id, item_id: @item.id)
+    @movement = Movement.create(purchase_date: Date.today, user_id: current_user.id, item_id: params[:item_id])
   end
 
   private
