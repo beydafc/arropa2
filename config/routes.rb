@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       get :bottom
       get :shoes
     end
-    resources :movements, only: %i[new create]
   end
   resources :movements, only: %i[show index]
+  post "movements", to: "movements#create", as: :buy
 end

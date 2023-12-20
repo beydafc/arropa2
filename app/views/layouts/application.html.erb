@@ -12,74 +12,11 @@
 
   <body>
 
-    <!--          *******************************************          START    NAVBAR         -->
-
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Clothes_hanger_icon_3.svg/800px-Clothes_hanger_icon_3.svg.png?20150106164522" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <%# if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Buy", "#", class: "nav-link" %>
-            <li class="nav-item">
-            <%= link_to "Sell", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-          <!-- <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Clothes_hanger_icon_3.svg/800px-Clothes_hanger_icon_3.svg.png?20150106164522", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %> -->
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
-          </li>
-        <%# else %>
-          <!--li class="nav-item"-->
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <!--/li-->
-        <%# end %>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!--          *******************************************                END NAVBAR       -->
-
-
-
+    <%= render "shared/navbar"%>
     <%= yield %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-
-
-<!--          *******************************************            START   FOOTER       -->
-<div class="footer">
-  <div class="footer-links">
-   <!--  <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>-->
-  </div>
-  <div class="footer-copyright">
-    Arropa2 is made with <i class="fas fa-heart"></i> at Le Wagon. <BR>ALLRIGHTSRESERVED 2023.DONTCOPY
-  </div>
-</div>
-
-
-
-<!--          *******************************************            END FOOOTER        -->
-
+    <%= render "shared/footer"%>
   </body>
 </html>
