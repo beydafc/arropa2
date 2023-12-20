@@ -11,10 +11,13 @@
   </head>
 
   <body>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
+    <!--          *******************************************          START    NAVBAR         -->
+
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://images.unsplash.com/photo-1562740672-22db5c969f04?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9wYXxlbnwwfDB8MHx8fDA%3D" %>
+      <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Clothes_hanger_icon_3.svg/800px-Clothes_hanger_icon_3.svg.png?20150106164522" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +36,7 @@
             <%= link_to "Sell", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <!-- <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Clothes_hanger_icon_3.svg/800px-Clothes_hanger_icon_3.svg.png?20150106164522", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %> -->
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
@@ -49,13 +52,18 @@
     </div>
   </div>
 </div>
+
+<!--          *******************************************                END NAVBAR       -->
+
+
+
     <%= yield %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
 
 
-
+<!--          *******************************************            START   FOOTER       -->
 <div class="footer">
   <div class="footer-links">
    <!--  <a href="#"><i class="fab fa-github"></i></a>
@@ -68,5 +76,10 @@
     Arropa2 is made with <i class="fas fa-heart"></i> at Le Wagon. <BR>ALLRIGHTSRESERVED 2023.
   </div>
 </div>
+
+
+
+<!--          *******************************************            END FOOOTER        -->
+
   </body>
 </html>
