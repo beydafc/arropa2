@@ -1,0 +1,17 @@
+<div class="container">
+<h2><%=@item.name%></h2>
+<h4><%=@item.kind.capitalize%></h4>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <%= cl_image_tag @item.photo.key, height: 300, width: 200, crop: :fill %>
+  <div>
+<p>$<%=@item.price.floor(2)%> USD</p>
+<p>Size: <%=(@item.size).upcase%></p>
+<p>For <%=(@item.genre).capitalize%></p>
+<p>Status: <%=@item.status%></p>
+<p>Seller: <%=@item.user.first_name%> <%=@item.user.last_name%></p>
+<p>Phone number: <%=@item.user.phone_number%></p>
+</div>
+
+<%= link_to "Back to all items", items_path, class: "btn-primary" %>
