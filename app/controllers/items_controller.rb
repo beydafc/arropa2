@@ -4,6 +4,16 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def top
+    @items = Item.where(kind: "top")
+  end
+  def bottom
+    @items = Item.where(kind: "bottom")
+  end
+  def shoes
+    @items = Item.where(kind: "shoes")
+  end
+
   def show
   end
 
