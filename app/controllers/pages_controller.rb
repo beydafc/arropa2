@@ -8,6 +8,6 @@ class PagesController < ApplicationController
   end
 
   def user_items
-    @items = current_user.items
+    @items = Item.where(user_id: current_user.id, status: "sale")
   end
 end

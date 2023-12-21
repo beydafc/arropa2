@@ -1,4 +1,22 @@
 <h2><%= current_user.first_name %>'s items</h2>
 <% @items.each do |item| %>
-  
+  <div class="card-product">
+  <div class="img"><%= cl_image_tag item.photo.key, crop: :fill %></div>
+  <div class="card-product-infos">
+    <h2><%=item.name%> <br><strong>$<%=item.price.floor(2)%> USD</strong></h2>
+    <p><%=item.kind.capitalize%></p>
+    <p>Size: <%=(item.size).upcase%></p>
+    <p>For <%=(item.genre).capitalize%></p>
+    <p>Seller: <%=item.user.first_name%> <%=item.user.last_name%></p>
+    <p>Phone number: <%=item.user.phone_number%></p>
+
+        <div style="margin-top: 10px;">
+          <%= link_to "Edit", edit_item_path(item.id), class: "btn btn-primary "  %>
+        </div>
+        <div style="margin-top: 10px;">
+          <%= link_to "Delete", item_path(item.id), class: "btn btn-danger text-light",
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+  </div>
+</div>
 <% end %>
