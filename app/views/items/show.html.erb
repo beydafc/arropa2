@@ -1,3 +1,9 @@
+<div class="index-header" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(https://media.istockphoto.com/id/941051278/photo/close-up-of-woman-hand-choosing-thrift-young-and-discount-t-shirt-clothes-in-store-searching.webp?b=1&s=612x612&w=0&k=20&c=PfKTXNCoyzCfsk6cciizsUYsRB04-zxXkV8-3XjLYtY=);">
+  <div class="header">
+    <h1>This Item</h1>
+  </div>
+</div>
+
 <div class="card-product">
   <div class="img"><%= cl_image_tag @item.photo.key, crop: :fill %></div>
   <div class="card-product-infos">
@@ -10,7 +16,7 @@
     <p>Phone number: <%=@item.user.phone_number%></p>
 
         <div style="margin-top: 10px;">
-          <%= button_to "Buy this item", buy_path(item_id: @item.id), class: "btn btn-primary "  %>
+          <%= button_to "Buy this item", buy_path(item_id: @item.id), class: "btn btn-primary ", data: {turbo_confirm: "Thank you for buying this item!"}%>
         </div>
         <div style="margin-top: 10px;">
           <%= link_to "Back to all items", items_path, class: "btn btn-primary" %>
