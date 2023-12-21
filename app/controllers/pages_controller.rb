@@ -6,6 +6,8 @@ class PagesController < ApplicationController
 
   def profile
   end
+
   def user_items
+    @items = Item.where(user_id: current_user.id, status: "sale")
   end
 end

@@ -1,12 +1,12 @@
 class ItemsController < ApplicationController
   before_action :find_item, only: %i[show edit update destroy]
   def index
-    @items = Item.all
+    @items = Item.where(status: "sale")
     if params[:query].present?
       @items = Item.search_by_attribute(params[:query])
     end
   end
-  
+
   def show
   end
 
@@ -28,11 +28,13 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(item_params)
+
+    redirect_to(user_items_path)
   end
 
   def destroy
     @item.destroy
-    redirect_to items_path
+    redirect_to user_items_path
   end
 
   private
