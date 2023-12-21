@@ -13,10 +13,15 @@
   <body>
 
     <%= render "shared/navbar"%>
+    <div id="page-container">
+    <div id="content-wrap">
     <%= yield %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    </div>
     <%= render "shared/footer"%>
+    </div>
   </body>
 </html>

@@ -1,1 +1,24 @@
 
+<h2><%= current_user.first_name %>'s movements</h2>
+<h3>Bought</h3>
+
+<% current_user.movements.each do |compra| %>
+<!--<p><%= compra.item_id%></p> -->
+<h4><%= compra.item.name%></h4>
+<p>On:<%= compra.purchase_date%></p>
+<% end %>
+
+<p>Sold</p>
+
+<!-- <% @movements.each do |venta| %>
+<p><%= venta.item.user.first_name %></p>
+<p><%= venta.purchase_date %></p>
+<% end %> -->
+
+<% @movements.each do |movimiento|%>
+<% item = movimiento.item %>
+<% if item.user_id == current_user.id %>
+<h4><%= item.name %></h4>
+<p>On:<%= item.purchase_date%></p>
+<% end %>
+<% end %>
