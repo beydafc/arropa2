@@ -6,6 +6,8 @@ class PagesController < ApplicationController
 
   def profile
   end
+
   def user_items
+    @items = current_user.items
   end
 end
