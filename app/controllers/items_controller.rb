@@ -16,8 +16,9 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if item.save
-      redirect_to items_path
+    @item.user = current_user
+    if @item.save
+      redirect_to user_items_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +35,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to user_items_path
+    redirect_to items_path
   end
 
   private
@@ -44,6 +45,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:price, :size, :genre, :color, :status, :type, :name, :photo)
+    params.require(:item).permit(:price, :size, :genre, :color, :status, :kind, :name, :photo)
   end
 end
