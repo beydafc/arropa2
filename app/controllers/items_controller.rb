@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
       @items = Item.search_by_attribute(params[:query])
     end
   end
-  
+
   def show
   end
 
@@ -28,6 +28,8 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(item_params)
+
+    redirect_to(user_items_path)
   end
 
   def destroy
