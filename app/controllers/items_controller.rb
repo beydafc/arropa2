@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
       @items = Item.search_by_attribute(params[:query])
     end
   end
-
+  
   def show
   end
 
