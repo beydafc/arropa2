@@ -1,13 +1,18 @@
-<h3>All our products</h3>
-<%= link_to "Go back", root_path %>
-<hr>
-<h1>Clothes</h1>
+<div class="index-header" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(https://t3.ftcdn.net/jpg/01/38/94/62/360_F_138946263_EtW7xPuHRJSfyl4rU2WeWmApJFYM0B84.jpg);">
+  <div class="header">
+    <h1>Clothes</h1>
+  </div>
+    <div class="d-flex justify-content-center mt-3">
+      <%= link_to "Go back", root_path, class: "btn btn-ghost" %>
+    </div>
+</div>
+
   <% @items.each do |item| %>
-    <div>
-      <%= cl_image_tag item.photo.key, height: 50, width: 50, crop: :fill %>
-      <p><%= item.name %></p>
-      <p>$<%= item.price.floor(2) %></p>
-      <p><%= item.kind %></p>
-      <p><%= link_to "See details", item_path(item.id)%></p>
+    <div class="index-flexbox">
+        <div><%= cl_image_tag item.photo.key, height: 50, width: 50, crop: :fill %></div>
+        <h2><%= item.name %></h2>
+        <p>$<%= item.price.floor(2) %></p>
+        <p><%= item.kind %></p>
+        <p><%= link_to "See details", item_path(item.id)%></p>
     </div>
   <% end %>
