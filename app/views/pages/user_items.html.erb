@@ -1,4 +1,5 @@
 <h2><%= current_user.first_name %>'s items</h2>
+<p><%= link_to "Back to profile", profile_path, class: "btn btn-primary" %></p>
 <% @items.each do |item| %>
   <div class="card-product">
   <div class="img"><%= cl_image_tag item.photo.key, crop: :fill %></div>
