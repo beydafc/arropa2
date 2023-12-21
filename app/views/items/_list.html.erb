@@ -1,12 +1,18 @@
-  <% @items.each do |item| %>
-    <div>
-      <%= cl_image_tag item.photo.key, height: 50, width: 50, crop: :fill %>
-      <p><%= item.name %></p>
-      <p>$<%= item.price.floor(2) %></p>
-      <p><%= link_to "See details", item_path(item.id)%></p>
+
+      <% @items.each do |item| %>
+<div>
+  <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4" >
+    <div class="col">
+        <div class="card">
+          <div class="card-img-top">
+            <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill %>
+          </div>
+          <div class="card-body" >
+            <h5 class="card-title"><%= item.name %>, Price: $<%= item.price.floor(2) %></h5>
+            <p class="btn"><%= link_to "See details", item_path(item.id)%></p>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-
-
-  
+  </div>
+</div>
