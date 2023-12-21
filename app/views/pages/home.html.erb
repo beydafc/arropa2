@@ -3,7 +3,7 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1562740672-22db5c969f04?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9wYXxlbnwwfDB8MHx8fDA%3D);">
   <div class="container" >
-    <h1>ARROPA2 <strong>buy</strong>sell <strong> your CLOTHES</strong>!</h1>
+    <h1>ARROPA2 <strong>buy &</strong> sell <strong> your CLOTHES</strong>!</h1>
     <p>Give your garments a second chance around!</p>
     <a class="btn btn-primary" href="#">View products</a>
   </div>
@@ -14,21 +14,47 @@
 
 
 <!--          *******************************************          START      CARDS         -->
-<% @items.each do |item| %>
+
   <div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 40px;">
     <div class="col">
       <div class="card h-100">
-        <img src="<% cl_image_tag item.photo.key %>" class="card-img-top" alt="...">
+        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" style="height: 20; width: 20;" alt="t-shirt">
         <div class="card-body">
-          <h5 class="card-title"><%= item.name %></h5>
-          <p class="card-text">Bella prenda de vestir que te garantizara felicidad en un mundo de incertidumbre.</p>
+          <h5 class="card-title">Tops</h5>
+          <p class="card-text">Garments as t-shirts, shirts, tops and blouses.</p>
         </div>
         <div class="card-footer">
       </div>
     </div>
   </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="height: 20; width: 20;" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Bottoms</h5>
+          <p class="card-text">Trousers, pants, shorts, skirts, you name it!</p>
+        </div>
+        <div class="card-footer">
+      </div>
+    </div>
+  </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://plus.unsplash.com/premium_photo-1661780784016-84df03d7d8a8?q=80&w=1506&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="height: 20; width: 20;" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Shoes</h5>
+          <p class="card-text">Get your sneakers, boots, high-heels or combatboots here!</p>
+        </div>
+        <div class="card-footer">
+      </div>
+    </div>
+  </div>
+
+
+
+
  </div>
-<% end %>
+
 
 
 
