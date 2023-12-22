@@ -1,21 +1,24 @@
 
 /* Style the side navigation */
 .sidenav {
-  height: 25%;
+  height: 100%;
   width: 100px;
   margin-right: 30px;
-  position: center;
+  margin-left: 30px;
+  padding-top: 250px;
+  position: absolute;
   list-style: none;
   bottom: 0;
   left: 0;
-  background-color: #111111b2;
+  background-color: #ffffff00;
  // overflow-x: hidden;
+
 }
 
 
 /* Side navigation links */
 .sidenav a {
-  color: white;
+  color: rgb(39, 38, 38);
   padding: 16px;
   text-decoration: none;
   display: block;
@@ -24,7 +27,7 @@
 
 /* Change color on hover */
 .sidenav a:hover {
-  background-color: #ddd;
+ // background-color: #ddd;
   color: black;
 }
 
