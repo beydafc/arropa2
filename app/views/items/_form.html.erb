@@ -1,14 +1,16 @@
 <div class="container">
   <p class= "text-danger">* required field</p>
   <hr>
-  <%= simple_form_for(@item) do |f| %>
-    <%= f.input :name, placeholder: "Referencia de la prenda" %>
-    <%= f.input :price, placeholder: "$" %>
-    <%= f.input :genre, placeholder: "men or women" %>
-    <%= f.input :size, placeholder: "s, m, l, xl" %>
-    <%= f.input :color, placeholder: "red, yellow, white." %>
-    <%= f.input :kind, placeholder: "top bottom shoes" %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
+  <div class="item_form">
+    <%= simple_form_for(@item) do |f| %>
+      <%= f.input :name, placeholder: "Referencia de la prenda"%>
+      <%= f.input :price, placeholder: "$" %>
+      <%= f.input :genre, placeholder: "men or women" %>
+      <%= f.input :size, placeholder: "s, m, l, xl" %>
+      <%= f.input :color, placeholder: "red, yellow, white." %>
+      <%= f.input :kind, placeholder: "top bottom shoes" %>
+      <%= f.input :photo, as: :file, class: "form-control-file" %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
