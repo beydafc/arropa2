@@ -1,7 +1,7 @@
 require "open-uri"
+Movement.delete_all
 Item.delete_all
 User.delete_all
-Movement.delete_all
 
 GENRE = %w(men women)
 SIZE = %w(s m l xl)
