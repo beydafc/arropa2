@@ -7,16 +7,31 @@
     </div>
 </div>
 
-<div class="index-flexbox">
-  <% @items.each do |item| %>
-      <div class="card" style="width: 18rem;">
-        <%= cl_image_tag item.photo.key, crop: :fill, class:"card-img-top"%>
-        <div class="card-body">
-          <h2><%= item.name %></h2>
-          <p>$<%= item.price.floor(2) %></p>
-          <p><%= item.kind %></p>
-          <p class="btn btn-primary"><%= link_to "See details", item_path(item.id), class:"link-light"%></p>
-        </div>
-      </div>
-  <% end %>
+
+<div class="container" style="display: flex;">
+
+  <div class="sidenav" >
+    <li> </li>
+    <li>  </li>
+    <li>  </li>
+    <%= link_to "Tops", items_path(query: "top") %>
+    <%= link_to "Bottoms", items_path(query: "bottom") %>
+    <%= link_to "Shoes", items_path(query: "shoes") %>
+  </div>
+
+  <div class="main-containter" >
+    <div class="index-flexbox">
+      <% @items.each do |item| %>
+          <div class="card" style="width: 18rem;">
+            <%= cl_image_tag item.photo.key, crop: :fill, class:"card-img-top"%>
+            <div class="card-body">
+              <h2><%= item.name %></h2>
+              <p>$<%= item.price.floor(2) %></p>
+              <p><%= item.kind %></p>
+              <p class="btn btn-primary"><%= link_to "See details", item_path(item.id), class:"link-light"%></p>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
 </div>
