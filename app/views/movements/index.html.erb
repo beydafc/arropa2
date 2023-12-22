@@ -8,12 +8,7 @@
 </div>
 
 
-
-
-
-<div class="containter" style="display: flex;  padding-bottom: 45px;">
-
-
+<div class="containter  movement_table" style="display: flex;>
     <div class="flex" style="display: flex; margin-top: 20px; margin-bottom: 35px;">
         <div class="card" style="width: 18rem;">
           <div class="card-header">
@@ -34,12 +29,11 @@
           <% @movements.each do |movimiento|%>
             <% item = movimiento.item %>
               <% if item.user_id == current_user.id %>
-              <li class="list-group-item"><h4><%= item.name %></h4></li>
+              <li class="list-group-item"><h4><%= item.name %></h4><p>On:<%= movimiento.purchase_date%></p></h4></li>
               <% end %>
             <% end %>
         </ul>
       </div>
-
     </div>
 
 
