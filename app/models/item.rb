@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   has_one :movement
   has_one_attached :photo
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
   validates :price, presence: true
   validates :genre, presence: true, inclusion: { in: %w(men women) }
   validates :size, presence: true, inclusion: { in: %w(s m l xl) }
