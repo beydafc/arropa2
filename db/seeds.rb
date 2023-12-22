@@ -10,7 +10,7 @@ IMG = %w(https://i5.walmartimages.com/asr/8e69565b-f650-4557-aaab-4474b7fa1628.a
 
 IMGS = %w(https://s3.us-east-1.amazonaws.com/images.gearjunkie.com/uploads/2023/08/ATP03502-3-e1692733928952.jpg https://comfyfootgear.com/cdn/shop/products/orthopedic-walking-shoes-platform-sneakers-for-women-683275.jpg?v=1603243946 https://rukminim2.flixcart.com/image/850/1000/xif0q/shoe/c/7/n/4-608-4-kliev-paris-black-original-imagsek8ymzadzzs.jpeg?q=90 https://www.bobbies.com/c/21810155-large_portrait/women-flat-boots.jpg https://come4buy.com/cdn/shop/products/sports-shoes-men-comtable-sneakers-230828002001.jpg?v=1693205391 https://thursdayboots.com/cdn/shop/files/1024x1024-Men-Renegade-TanMatte-022323-2.jpg?v=1684176386)
 
-USER = %w(1 2)
+USER = [1, 2]
 
 User.create(email: "beyda@hotmail.com", password: "1234567", first_name: "Beyda", last_name: "Fentanes", phone_number: "442 506 6096", address: "Milenio III, Queretaro, Mexico")
 
