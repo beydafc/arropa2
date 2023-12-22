@@ -8,24 +8,26 @@
 </div>
 
 
-<div class="container" style="display: flex;">
+<div class="container" style="display: flex; ">
 
-  <div class="sidenav" >
+
+
+  <div class="sidenav" style=" font-size: 20px;" >
     <%= link_to "Tops", items_path(query: "top") %>
     <%= link_to "Bottoms", items_path(query: "bottom") %>
     <%= link_to "Shoes", items_path(query: "shoes") %>
   </div>
 
-  <div class="main-containter" >
+  <div class="main-containter" style="margin-left: 100px;" >
     <div class="index-flexbox">
       <% @items.each do |item| %>
-          <div class="card" style="width: 15rem;">
-            <%= cl_image_tag item.photo.key, class:"card-img-top card-product-img"%>
+          <div class="card" style="width: 15rem; border-radius: 10px;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+            <%= cl_image_tag item.photo.key, class:"card-img-top card-product-img br-10px" %>
             <div class="card-body">
-              <h4><%= item.name %></h4>
-              <p>$<%= item.price.floor(2) %></p>
-              <p><%= item.kind %></p>
-              <p class="btn btn-primary"><%= link_to "See details", item_path(item.id), class:"link-light"%></p>
+              <h4 style="font-weight: bolder;"><%= item.name %></h4>
+              <strong><p>Price: $<%= item.price.floor(2) %></p></strong>
+              <p>Kind of item: <%= item.kind %></p>
+              <p class="btn btn-primary" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" ><%= link_to "See details", item_path(item.id), class:"link-light br-1px text-decoration-none"%></p>
             </div>
           </div>
       <% end %>
