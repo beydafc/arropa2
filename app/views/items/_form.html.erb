@@ -1,7 +1,7 @@
 <div class="container">
-  <p class= "text-danger">* required field</p>
   <hr>
   <div class="item_form">
+  <p class= "text-danger">* required field</p>
     <%= simple_form_for(@item) do |f| %>
       <%= f.input :name, placeholder: "Referencia de la prenda"%>
       <%= f.input :price, placeholder: "$" %>
@@ -9,8 +9,8 @@
       <%= f.input :size, placeholder: "s, m, l, xl" %>
       <%= f.input :color, placeholder: "red, yellow, white." %>
       <%= f.input :kind, placeholder: "top bottom shoes" %>
-      <%= f.input :photo, as: :file, class: "form-control-file" %>
-      <%= f.submit %>
+      <%= f.input :photo, as: :file%>
+      <%= f.submit%>
     <% end %>
   </div>
 </div>
