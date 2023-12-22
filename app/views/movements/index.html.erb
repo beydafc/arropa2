@@ -1,23 +1,39 @@
-<h2><%= current_user.first_name %>'s movements</h2>
-<p>Yo compré</p>
 
-<% current_user.movements.each do |compra| %>
-<%= compra.item_id%>
-<%= compra.item.name%>
+<div class="containter" style="display: flex; padding-top: 45px; padding-bottom: 45px; content-align: center;">
 
-<p>En esta fecha:<%= compra.purchase_date%></p>
-<% end %>
+<h2  style="font-weight:bolder; padding: 15px; margin-top: 20px; margin-bottom:20px;"><%= current_user.first_name %>'s movements</h2>
 
-<p>Yo vendí</p>
+    <div class="flex" style="display: flex; content-align:center; margin-top: 20px; margin-bottom: 35px;">
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            <h3>Bought Items</h3>
+          </div>
+        <ul class="list-group list-group-flush">
+          <% current_user.movements.each do |compra| %>
+          <li class="list-group-item"><h4><%= compra.item.name%></h4><p>On:<%= compra.purchase_date%></p></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          <h3>Sold Items</h3>
+        </div>
+        <ul class="list-group list-group-flush">
+          <% @movements.each do |movimiento|%>
+            <% item = movimiento.item %>
+              <% if item.user_id == current_user.id %>
+              <li class="list-group-item"><h4><%= item.name %></h4></li>
+              <% end %>
+            <% end %>
+        </ul>
+      </div>
+
+    </div>
+
+
 
 <!-- <% @movements.each do |venta| %>
 <p><%= venta.item.user.first_name %></p>
 <p><%= venta.purchase_date %></p>
 <% end %> -->
-
-<% @movements.each do |movimiento|%>
-<% item = movimiento.item %>
-<% if item.user_id == current_user.id %>
-<p><%= item.name %></p>
-<% end %>
-<% end %>
