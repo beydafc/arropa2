@@ -1,34 +1,41 @@
 <div class="index-header" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(https://t3.ftcdn.net/jpg/01/38/94/62/360_F_138946263_EtW7xPuHRJSfyl4rU2WeWmApJFYM0B84.jpg);">
   <div class="header">
-    <h1>User Items</h1>
+    <h1>My Items</h1>
   </div>
     <div class="d-flex justify-content-center mt-3">
-      <%= link_to "Home", root_path, class: "btn btn-ghost" %>
+      <%= link_to "My Profile", profile_path, class: "btn btn-ghost" %>
     </div>
 </div>
 
 
 
-<h2><%= current_user.first_name %>'s items</h2>
-<p><%= link_to "Back to profile", profile_path, class: "btn btn-primary" %></p>
-<% @items.each do |item| %>
-  <div class="card-product">
-  <div class="img"><%= cl_image_tag item.photo.key, crop: :fill %></div>
-  <div class="card-product-infos">
-    <h2><%=item.name%> <br><strong>$<%=item.price.floor(2)%> USD</strong></h2>
-    <p><%=item.kind.capitalize%></p>
-    <p>Size: <%=(item.size).upcase%></p>
-    <p>For <%=(item.genre).capitalize%></p>
-    <p>Seller: <%=item.user.first_name%> <%=item.user.last_name%></p>
-    <p>Phone number: <%=item.user.phone_number%></p>
 
-        <div style="margin-top: 10px;">
-          <%= link_to "Edit", edit_item_path(item.id), class: "btn btn-primary "  %>
-        </div>
-        <div style="margin-top: 10px;">
-          <%= link_to "Delete", item_path(item.id), class: "btn btn-danger text-light",
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        </div>
+
+  <div class="main-containter" style="margin-left: 100px;" >
+    <div class="index-flexbox">
+      <% @items.each do |item| %>
+          <div class="card" style="width: 15rem; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+            <%= cl_image_tag item.photo.key, class:"card-img-top card-product-img br-10px" %>
+            <div class="card-body">
+              <h4 style="font-weight: bolder;"><%= item.name %></h4>
+              <strong><p>Price: $<%= item.price.floor(2) %></p></strong>
+              <p>Kind of item: <%= item.kind %></p>
+              <p>Size: <%=(item.size).upcase%></p>
+              <p>For <%=(item.genre).capitalize%></p>
+              <p>Seller: <%=item.user.first_name%> <%=item.user.last_name%></p>
+              <p>Phone number: <%=item.user.phone_number%></p>
+
+               <div style="margin-top: 10px;">
+                <%= link_to "Edit", edit_item_path(item.id), class: "btn btn-primary "  %>
+              </div>
+              <div style="margin-top: 10px;">
+                <%= link_to "Delete", item_path(item.id), class: "btn btn-danger text-light", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              </div>
+
+
+
+            </div>
+          </div>
+        <% end %>
+    </div>
   </div>
-</div>
-<% end %>
